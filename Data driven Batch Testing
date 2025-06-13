@@ -1,0 +1,73 @@
+Concept Summary: Data-Driven Batch in WinRunner
+What is it?
+Data-driven batch testing is a way to run the same test script multiple times, each time with a different set of input data, all in a single execution loop. Instead of recording multiple test cases, you reuse a single test script and feed it various data sets through a data table.
+
+💡 Why Use Data-Driven Batch Testing?
+Saves time – avoids writing separate test cases for each input.
+
+Improves test coverage with multiple input combinations.
+
+Makes tests easier to maintain (just update the data table).
+
+Helps identify bugs with both valid and invalid data sets.
+
+🔁 Process Overview:
+🔹 For Non-Data-Driven Testing:
+Create test
+
+Run test
+
+Analyze results
+
+🔹 For Data-Driven Batch Testing:
+Create test
+
+Convert test to data-driven test (replace hardcoded values with parameters)
+
+Create data table (stores sets of inputs)
+
+Run test
+
+Analyze results
+
+🛠️ How It Works in WinRunner:
+Use the DataDriver Wizard or manual scripting.
+
+Replace hardcoded inputs with parameters.
+
+Link parameters to values in an external data table (e.g., Excel or .dat file).
+
+Run test in a loop — each iteration pulls new data from the table.
+
+📘 Example Scenario:
+You want to test login functionality for 10 users.
+Rather than writing 10 separate tests:
+
+You write 1 test that reads username and password from a data table.
+
+The test runs 10 times automatically with each set of credentials.
+
+🎤 Viva Questions and Answers
+Q1. What is data-driven batch testing?
+A: It is a technique to run the same test multiple times with different sets of input data stored in an external data table.
+
+Q2. Why is batch testing useful?
+A: It saves time, improves test coverage, and avoids redundant test scripts.
+
+Q3. What is the difference between normal testing and data-driven testing?
+A: Normal testing uses fixed inputs; data-driven testing uses parameters linked to external data sources, allowing multiple input sets to be tested in one script.
+
+Q4. What tool in WinRunner helps with data-driven testing?
+A: The DataDriver Wizard.
+
+Q5. What must be done to convert a regular test into a data-driven test?
+A: Replace fixed values with parameters and create a linked data table containing the variable inputs.
+
+Q6. What is stored in the data table?
+A: Different sets of input values (e.g., usernames, passwords, product IDs, etc.) for each test iteration.
+
+Q7. How does the test access each data row?
+A: Through a loop that reads each row one by one and substitutes the parameters in the test with those values.
+
+Q8. Is it necessary to create multiple scripts in batch testing?
+A: No, only one reusable script is created; the data changes for each run.

@@ -1,0 +1,62 @@
+Concept Summary: Database Checkpoint – Custom Check
+What it is:
+A Database Checkpoint (Custom Check) allows you to verify the contents of a database during automated testing. You can check specific rows, columns, and values from a result set returned by a query.
+
+Why use it:
+To ensure the data in the database is correct and consistent with what your application displays or uses.
+
+Key things you can do:
+
+Check specific rows and columns in the result set.
+
+Compare actual vs expected data.
+
+Count rows or columns returned by the query.
+
+Edit the expected values manually if needed.
+
+Tools supported:
+
+ODBC
+
+Microsoft Query
+
+Data Junction
+
+📝 Steps to Create a Custom Checkpoint
+Go to Insert > Database Checkpoint > Custom Check.
+
+If recording in Analog mode, press the CHECK DATABASE (CUSTOM) softkey.
+
+Use the Database Checkpoint Wizard to set up the check.
+
+Define or create a query using SQL or through tools like Microsoft Query.
+
+If needed, parameterize the SQL query.
+
+WinRunner captures the query and opens the Check Database dialog box.
+
+🎤 Viva Questions and Answers
+Q1. What is a database checkpoint?
+A: A database checkpoint is used in automated testing tools like WinRunner to validate data retrieved from a database during test execution.
+
+Q2. What is a custom check in a database checkpoint?
+A: A custom check allows the tester to specify which properties (such as specific rows or columns) should be verified in the database result set.
+
+Q3. What are the key purposes of a custom check?
+A: To validate data content, edit expected results, and count rows or columns returned by a database query.
+
+Q4. What are the tools you can use to perform a custom check?
+A: ODBC, Microsoft Query, and Data Junction.
+
+Q5. How do you parameterize an SQL query in a database checkpoint?
+A: In the last screen of the Microsoft Query wizard, click “View data or edit query in Microsoft Query”, and then follow instructions to add parameters.
+
+Q6. What is the difference between standard and custom database checkpoints?
+A: Standard checkpoints check the entire result set automatically, while custom checkpoints allow the tester to manually specify and control what parts of the data to check.
+
+Q7. Can we perform a database checkpoint in Analog mode?
+A: Yes, by pressing the CHECK DATABASE (CUSTOM) softkey during recording.
+
+Q8. What happens after defining the SQL query?
+A: WinRunner captures the query and opens the Check Database dialog box where further configurations or validations can be made.

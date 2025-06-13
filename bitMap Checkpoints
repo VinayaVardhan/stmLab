@@ -1,0 +1,36 @@
+1. Introduction to Bitmap Checkpoints
+Definition: A Bitmap Checkpoint is a binary representation of an image.
+Purpose: It is used to compare images in different versions of a build application.
+Limitation: This checkpoint only supports static images and not images with dynamism (i.e., images that change).
+2. Types of Bitmap Checkpoints (Checkpoint Sub-options)
+A Bitmap Checkpoint consists of two main sub-options:
+
+For Object/Window
+For Screen Area
+3. For Object/Window Checkpoint (16.3.1)
+Purpose: We use this option to compare our expected image with the actual image within a specific object or window. This is commonly used for Logo Testing.
+Function: obj_check_bitmap("image object name", "image file name", time)
+This function compares the image associated with a specified object or window against a stored bitmap image file.
+Navigation to create:
+Insert menu → Bitmap Checkpoint
+For Object/Window → Record Image object operation (Help → About).
+Insert menu → Bitmap Checkpoint
+For Object/Window → Select expected image
+Close old build → Open new build → Click Run
+Analyze differences manually.
+Example: Figures III.16.26 and III.16.27 show expected and actual logos for "Mercury Flight Reservations." Figure III.16.28 shows the difference between them, highlighting areas of discrepancy.
+4. For Screen Area Checkpoint (16.3.2)
+Purpose: We use this option to compare our expected image area with the actual area on the screen.
+Function: obj_check_bitmap("image object name", "imgfile name", time, x,y,width,height);
+This function compares a specific rectangular area of the screen (defined by x, y, width, and height coordinates) against a stored bitmap image file.
+Navigation to create:
+Insert menu → Bitmap Checkpoint
+For screen area → Select required image region.
+Right click to release from selection.
+The difference between expected and actual images (Figures III.16.30 and III.16.31) will be displayed.
+Example: Figure III.16.29 shows an "Expected logo area" for "Mercury Flight Reservations." Figure III.16.30 shows the "Actual logo area." Figure III.16.31 illustrates the "Difference between expected logo area and actual logo area."
+5. General Notes
+Recording: During checkpoint creation, WinRunner converts any type of image in the application build into a .bmp (bitmap) file.
+Analysis: After completing the test execution and reviews (completeness and corrections), analyze reports and results in the test log, and then send defect reports to the development team.
+TSL Support: TSL supports variable number of arguments to functions like 'C' language.
+GUI Checkpoint: GUI Checkpoint is mandatory in functionality test automation, but Bitmap Checkpoint is optional because all windows do not consist of images.

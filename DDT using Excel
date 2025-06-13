@@ -1,0 +1,89 @@
+Concept Summary: Data-Driven Testing Using Excel
+What is it?
+Data-driven testing (DDT) is a testing methodology where test input and expected output are read from external data sources like Excel files, CSV, or databases, rather than being hardcoded. The same test case runs multiple times with different data sets, improving test coverage and reducing redundancy.
+
+💡 Why use Excel in DDT?
+Easy to edit, manage, and view data.
+
+No need to rewrite the script for each data input.
+
+Enables both positive and negative test cases using the same script.
+
+Enhances test coverage with minimal code change.
+
+⚙️ Steps Involved
+Pre-requisites:
+Java JDK 1.5+
+
+Apache POI (used to read Excel in Java)
+
+Eclipse IDE
+
+Selenium Standalone Server
+
+TestNG framework
+
+🧪 Test Scenario Example
+Goal: Open the application and test login functionality using different username and password from an Excel file.
+
+Step-by-step Summary:
+Create Excel File:
+
+Name it Credentials.xlsx
+
+Store data in rows like:
+
+Username	Password
+user1	pass1
+user2	pass2
+
+Set Up Maven or Java Project:
+
+Add Apache POI JARs to project library.
+
+Add Selenium and TestNG.
+
+Create POM Class (Loginpage.java):
+
+Use @FindBy to identify UI elements (username, password fields, login button).
+
+Use PageFactory to initialize elements.
+
+Write login method.
+
+Create SuperClass.java and ValidLoginLogout.java:
+
+SuperClass.java sets up browser and handles teardown.
+
+ValidLoginLogout.java fetches Excel data and calls login function in a loop.
+
+Write Code to Read Excel:
+
+Use Apache POI to read rows from Excel.
+
+Pass each row’s data to the login method.
+
+🎤 Viva Questions and Answers
+Q1. What is data-driven testing?
+A: Data-driven testing is a test design where test data is taken from external sources and the same test is executed multiple times with different inputs.
+
+Q2. What is the advantage of using Excel in DDT?
+A: Excel provides a structured and easy-to-edit data format, allowing tests to be updated without modifying the code.
+
+Q3. What libraries are needed for reading Excel in Java?
+A: Apache POI library is commonly used to read/write Excel files in Java.
+
+Q4. What is the role of the Page Object Model (POM)?
+A: POM separates UI locators and code logic, making test scripts easier to manage and maintain.
+
+Q5. What framework is used to execute the test cases in this setup?
+A: TestNG is used for executing and organizing test cases.
+
+Q6. How is Selenium used here?
+A: Selenium WebDriver is used to automate browser actions like opening the app and entering credentials.
+
+Q7. How do you retrieve data from Excel in Java?
+A: Use Apache POI to open the Excel file, read the sheet, and iterate through rows and columns.
+
+Q8. How does looping work in DDT?
+A: The script loops through each row of the Excel file and runs the test using that row’s data.

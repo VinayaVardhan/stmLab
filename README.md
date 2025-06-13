@@ -1,2 +1,2 @@
-# stmLab
-lab programs
+# STMDemo
+contains all STM lab programs...

@@ -1,0 +1,46 @@
+Test Case Template
+Test Case ID	Test Scenario	Test Steps	Expected Result	Status (Pass/Fail)
+
+🔹 Basic Operational Test Cases
+| TC_01 | Launch Calculator | Click on Calculator from Start Menu or search bar | Calculator launches successfully | |
+| TC_02 | Maximize Window | Click maximize button on Calculator window | Calculator maximizes properly | |
+| TC_03 | Close Calculator | Click on the 'X' button or File > Exit | Calculator closes properly | |
+| TC_04 | Open Help | Click on Help > Documentation | Help document opens successfully | |
+| TC_05 | Copy and Paste | Type a number, copy (Ctrl+C), and paste (Ctrl+V) in a text editor | Value should be pasted correctly | |
+| TC_06 | Preferences | Check if Settings or Preferences are accessible | Preferences dialog appears | |
+| TC_07 | Number Keys | Press keys 0–9 on the calculator | Each number appears correctly on screen | |
+| TC_08 | Arithmetic Keys | Press +, -, *, /, % | Each key should function as expected | |
+| TC_09 | Clear Key | Press 'C' or 'CE' | Display should be cleared | |
+| TC_10 | Bracket Keys | Use ( and ) in expression | Brackets function as expected | |
+| TC_11 | Equal Key | Press '=' after an expression | Correct result should be displayed | |
+| TC_12 | Square/Square Root | Use √ and x² keys | Calculator performs correct operations | |
+
+🔹 Functionality Test Cases
+| TC_13 | Addition of positive numbers | 5 + 10 = | Output: 15 | |
+| TC_14 | Addition of two negatives | (-5) + (-10) = | Output: -15 | |
+| TC_15 | Addition of pos & neg | 10 + (-5) = | Output: 5 | |
+| TC_16 | Subtraction of positives | 10 - 5 = | Output: 5 | |
+| TC_17 | Subtraction of negatives | (-10) - (-5) = | Output: -5 | |
+| TC_18 | Sub of neg & pos | (-5) - 10 = | Output: -15 | |
+| TC_19 | Multiplication of positives | 5 * 5 = | Output: 25 | |
+| TC_20 | Multiplication of negatives | (-5) * (-4) = | Output: 20 | |
+| TC_21 | Mult of pos & neg | 5 * (-4) = | Output: -20 | |
+| TC_22 | Division of positives | 10 / 2 = | Output: 5 | |
+| TC_23 | Division of negatives | (-10) / (-2) = | Output: 5 | |
+| TC_24 | Pos / Neg | 10 / (-2) = | Output: -5 | |
+| TC_25 | Division by zero | 5 / 0 = | Should show error or infinity | |
+| TC_26 | Zero divided by number | 0 / 5 = | Output: 0 | |
+| TC_27 | BODMAS check | 5 + (2 * 3) = | Output: 11 | |
+
+✅ Tips for Viva:
+Q1. What are the types of test cases you wrote for the calculator?
+A: Operational (UI-based) and functional (mathematical) test cases.
+
+Q2. How do you test copy-paste functionality?
+A: By copying a number from the calculator and pasting it into Notepad or any text field.
+
+Q3. What should happen when dividing a number by 0?
+A: It should either display an error message or "∞" depending on the calculator logic.
+
+Q4. What is tested using the BODMAS test case?
+A: It checks if the calculator follows operator precedence rules properly.
