@@ -1,0 +1,40 @@
+Silent Mode Test Execution in WinRunner
+Definition:
+Silent Mode is used to execute test scripts without any interruptions or pop-ups, ensuring a smooth, unattended execution process. It is particularly useful during batch test runs or overnight executions.
+
+✅ Purpose of Silent Mode:
+To avoid manual intervention during test runs.
+
+To allow test execution to continue even if there are errors or pop-up dialogs.
+
+To enable batch mode execution for multiple test cases.
+
+⚙️ How to Enable Silent Mode in WinRunner:
+Open WinRunner.
+
+Click on the Tools menu.
+
+Choose General Options.
+
+Go to the Run Tab.
+
+Select the checkbox "Run in batch mode" (this enables Silent Mode).
+
+Click OK to apply the setting.
+
+📌 This setting tells WinRunner to execute tests silently, without displaying any messages or dialogs.
+
+📌 Important Notes:
+When in Silent Mode, interactive functions like pause(), tl_step("message", ...), or msg_box() will not work as expected. These require user input or display messages, which are suppressed in silent execution.
+
+Best suited for automated test environments like CI/CD pipelines or nightly builds.
+
+🧠 Use Case Example:
+Let’s say you have a test suite that runs every night. You don’t want the execution to stop because of a pop-up or a pause() function. By enabling Silent Mode, WinRunner will:
+
+Skip any dialogs.
+
+Continue running the remaining scripts.
+
+Log the results in the report for review the next day.
+
