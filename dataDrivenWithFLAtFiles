@@ -1,0 +1,90 @@
+Send different SOAP requests stored in flat files (like XML) to the CurrencyConverter web service using SoapUI's DataSource TestStep.
+
+🔁 Step-by-Step Process:
+1️⃣ Create a SoapUI Project
+Go to SoapUI → File → New SOAP Project
+
+Use the WSDL:
+
+http://www.webservicex.com/CurrencyConvertor.asmx?wsdl
+2️⃣ Create a TestSuite and TestCase
+Right-click the project → New TestSuite
+
+Inside TestSuite → New TestCase
+
+3️⃣ Add a DataSource TestStep
+In your TestCase editor → Click Add Step → DataSource
+
+Choose DataSource Type = Directory
+
+4️⃣ Configure the Directory Settings
+In the DataSource configuration:
+
+Set Directory path where your .xml or .txt request files are stored
+
+Set Filter:
+
+For XML: *.xml
+
+For Text: *.txt
+
+Encoding: Default is fine unless your files use a specific one
+
+Under Property, enter a name (e.g. RequestData)
+(This will hold the contents of each file)
+
+🔹 Note: If you name the property Filename, it will store the file name instead of its content.
+
+5️⃣ Add a SOAP Request TestStep
+Click Add Step → Test Request
+
+Choose ConversionRate operation from CurrencyConverterSoap interface
+
+Press OK → XML editor opens
+
+6️⃣ Link the SOAP Request with DataSource
+Delete the existing XML content in the request editor
+
+Right-click → Choose Insert Property → DataSource → RequestData
+
+This will insert something like:
+
+
+${DataSource#RequestData}
+This tells SoapUI to use the request content from each flat file
+
+🔸 Tip: If an XPATH window appears while inserting, just click OK without selecting anything.
+
+7️⃣ Add DataSource Loop
+Add a DataSource Loop TestStep
+
+Source Step: DataSource
+
+Target Step: SOAP Request
+
+End Step: (last step before loop restarts)
+
+✅ Example XML in Input File
+xml
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.webserviceX.NET/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:ConversionRate>
+         <web:FromCurrency>SEK</web:FromCurrency>
+         <web:ToCurrency>USD</web:ToCurrency>
+      </web:ConversionRate>
+   </soapenv:Body>
+</soapenv:Envelope>
+🧪 Execution
+Run the TestCase → SoapUI will:
+
+Pick each file from the folder
+
+Extract its content
+
+Use it as the request
+
+Send it to the web service
+
+Repeat for all files
+
